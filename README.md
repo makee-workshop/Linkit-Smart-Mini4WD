@@ -11,7 +11,7 @@ Prerequisite
 System Requirements
 ==============
 
- - Python (Flask)
+ - Python (Python 2.7)
  - Xcode 7 (iOS9)
  - Linkit Smart 7688
 
