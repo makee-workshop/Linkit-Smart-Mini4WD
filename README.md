@@ -43,7 +43,7 @@ Youtube(FPV):https://www.youtube.com/watch?v=2u6RsyXdW8Q
 
 FB: https://www.facebook.com/makee.io
 
-Picture
+Photo
 ==============
 ![Imgur](http://i.imgur.com/rKk7zCs.jpg)
 
