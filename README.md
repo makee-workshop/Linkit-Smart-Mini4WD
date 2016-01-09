@@ -8,11 +8,6 @@ Prerequisite
  - Linkit Smart 7688 skill
  - Understanding REST architecture.
 
-Philosophy
-==============
-
- - Continusly develop a SPA template suite hat can be reused in new applications without being greatly changed from the original.
-
 System Requirements
 ==============
 
@@ -40,7 +35,7 @@ License
 
 MIT
 
-Copyright (C) 2014 mbed-taiwan
+Copyright (C) 2016 Makee.io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
