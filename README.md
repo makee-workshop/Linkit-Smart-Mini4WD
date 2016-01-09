@@ -36,9 +36,9 @@ GitHub: https://github.com/makee-workshop/Smart-Mini4WD
 
 Blog: http://oranwind.org/un/
 
-Youtube (自動加減速影片): https://www.youtube.com/watch?v=HQ_UtapTDls
+Youtube (automatic acceleration and deceleration): https://www.youtube.com/watch?v=HQ_UtapTDls
 
-Youtube(FPV影片):https://www.youtube.com/watch?v=2u6RsyXdW8Q
+Youtube(FPV):https://www.youtube.com/watch?v=2u6RsyXdW8Q
 
 FB: https://www.facebook.com/makee.io
 
