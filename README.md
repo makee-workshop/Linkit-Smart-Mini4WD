@@ -45,17 +45,17 @@ FB: https://www.facebook.com/makee.io
 
 Picture
 ==============
-[Imgur](http://i.imgur.com/2qYd433.jpg)
+![Imgur](http://i.imgur.com/2qYd433.jpg)
 
-[Imgur](http://i.imgur.com/Q2QFrkC.jpg)
+![Imgur](http://i.imgur.com/Q2QFrkC.jpg)
 
-[Imgur](http://i.imgur.com/LivXqNr.jpg)
+![Imgur](http://i.imgur.com/LivXqNr.jpg)
 
-[Imgur](http://i.imgur.com/UKxJn9s.jpg)
+![Imgur](http://i.imgur.com/UKxJn9s.jpg)
 
-[Imgur](http://i.imgur.com/sDQZEdc.jpg)
+![Imgur](http://i.imgur.com/sDQZEdc.jpg)
 
-[Imgur](http://i.imgur.com/IsN34cg.jpg)
+![Imgur](http://i.imgur.com/IsN34cg.jpg)
 
 License
 ==============
