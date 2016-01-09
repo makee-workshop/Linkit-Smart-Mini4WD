@@ -45,7 +45,7 @@ FB: https://www.facebook.com/makee.io
 
 Picture
 ==============
-![Imgur](http://i.imgur.com/2qYd433.jpg)
+![Imgur](http://i.imgur.com/rKk7zCs.jpg)
 
 ![Imgur](http://i.imgur.com/Q2QFrkC.jpg)
 
