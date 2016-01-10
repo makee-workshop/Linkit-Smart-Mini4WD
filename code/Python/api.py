@@ -50,6 +50,14 @@ def turnOnThread(enginestatus):
                 print "(x,y,z)=%5.2f, %5.2f, %5.2f" % (a[0], a[1], a[2])
             time.sleep(0.3)
 
+def turnOffThread(enginestatus):
+    global enginespeed
+    global isStart
+    isStart = str_to_bool(enginestatus)
+    pin.enable(isStart)
+    device.update()
+    pin.write(0)
+    
 # POST http://192.168.0.101:5000/api/v1.0/enginestatus/
 @app.route("/api/v1.0/enginestatus/", methods=['POST'])
 def setenginestatus():
@@ -57,7 +65,15 @@ def setenginestatus():
         thread.start_new_thread(turnOnThread, (request.form['enginestatus'],))
         return json.dumps({"status": 200, "comment": "call set Engine status Finish"})
     else:
-        thread.start_new_thread(turnOffThread, ())
+        return "415 Unsupported Media Type"
+
+# POST http://192.168.0.101:5000/api/v1.0/enginestop/
+@app.route("/api/v1.0/enginestop/", methods=['POST'])
+def setenginestop():
+    if request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
+        thread.start_new_thread(turnOffThread, (request.form['enginestop'],))
+        return json.dumps({"status": 200, "comment": "call set Engine status Finish"})
+    else:
         return "415 Unsupported Media Type"
 
 # http://192.168.100.1:5000/api/v1.0/video/on
