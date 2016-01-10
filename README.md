@@ -33,7 +33,7 @@ Learn more about the [Linkit Smart 7688](http://oranwind.org/linkit-7688-linkit-
 
 Other Resource
 ==============
-GitHub: https://github.com/makee-workshop/Smart-Mini4WD
+GitHub: https://github.com/makee-workshop/Linkit-Smart-Mini4WD
 
 Blog: http://oranwind.org/un/
 
