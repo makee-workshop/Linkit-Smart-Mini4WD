@@ -1,4 +1,4 @@
-# Smart-Mini4WD
+# Linkit Smart Mini4WD
 ## Linkit Smart 7688
 
 Prerequisite
