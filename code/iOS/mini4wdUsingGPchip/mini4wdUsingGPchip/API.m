@@ -27,7 +27,7 @@
 {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
@@ -46,7 +46,7 @@
     
 }
 
--(void)setEngine:(NSString *)url completion:(void (^)(id response))completion error:(void (^)(NSError *error))error
+-(void)setPower:(NSString *)url params:(NSDictionary *)p_Params completion:(void (^)(id response))completion error:(void (^)(NSError *error))error
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -55,7 +55,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager POST:url
-      parameters:nil
+      parameters:p_Params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
              completion(@"Success");

@@ -14,9 +14,6 @@ f = os.popen('ifconfig br-lan | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1'
 
 inet_addr = f.read()
 app = Flask(__name__)
-isStart = True
-enginespeed = 0
-
 device = adxl.Adxl345(0)
 pin = mraa.Pwm(18)
 pin.period_ms(2)
@@ -54,26 +51,30 @@ class turnOn(threading.Thread):
         pin.enable(False)
         device.update()
 
-# POST http://192.168.0.101:5000/api/v1.0/enginestatus/
-@app.route("/api/v1.0/enginestatus/", methods=['POST'])
-def setenginestatus():
-    if request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
-        global powerOnThread
-        powerOnThread = turnOn()
-        powerOnThread.start()
-        return json.dumps({"status": 200, "comment": "call set Engine status Finish"})
-    else:
-        thread.start_new_thread(turnOffThread, ())
-        return "415 Unsupported Media Type"
+def str_to_bool(s):
+    if s == 'True':
+         return True
+    elif s == 'False':
+         return False
 
-# http://192.168.100.1:5000/api/v1.0/video/off
-@app.route("/api/v1.0/power/off", methods=['GET'])
-def setpoweroff():
-    global powerOnThread
-    powerOnThread.stop()
+# POST http://192.168.0.101:5000/api/v1.0/enginestatus/
+@app.route("/api/v1.0/power/", methods=['POST'])
+def setpower():
+    if request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
+        isStart = str_to_bool(request.form['power'])
+        global powerOnThread
+        if isStart:
+            powerOnThread = turnOn()
+            powerOnThread.start()
+            return json.dumps({"status": 200, "comment": "call set Power On Finish"})
+        else:
+            powerOnThread.stop()
+            return json.dumps({"status": 200, "comment": "call set Power Off Finish"})
+    else:
+        return json.dumps({"status": 415, "comment": "Unsupported Media Type"})
 
 # http://192.168.100.1:5000/api/v1.0/video/on
-# http://mylinkit.local:8080/?action=stream
+# http://192.168.100.1:8080/?action=stream
 @app.route("/api/v1.0/video/on", methods=['GET'])
 def setvideoon():
     global videoOnThread

@@ -13,6 +13,6 @@
 + (instancetype)sharedInstance;
 
 -(void)getVideo:(NSString *)getUrl completion:(void (^)(id response))completion error:(void (^)(NSError *error))error;
--(void)setEngine:(NSString *)url completion:(void (^)(id response))completion error:(void (^)(NSError *error))error;
+-(void)setPower:(NSString *)url params:(NSDictionary *)p_Params completion:(void (^)(id response))completion error:(void (^)(NSError *error))error;
 
 @end

@@ -21,8 +21,7 @@ static NSString *serverIP = @"http://192.168.100.1";
 static NSString *serverPort = @":5000";
 static NSString *getVideo = @"/api/v1.0/video/on";
 static NSString *videoPort = @":8080";
-static NSString *postEngine = @"/api/v1.0/enginestatus/";
-static NSString *powerOff = @"/api/v1.0/power/off";
+static NSString *postPower = @"/api/v1.0/power/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,24 +44,23 @@ static NSString *powerOff = @"/api/v1.0/power/off";
 
 - (IBAction)powerBtnAction:(id)sender {
     
+    NSString *url = [NSString stringWithFormat:@"%@%@%@", serverIP, serverPort, postPower];
     if ([self.powerBtn.titleLabel.text isEqualToString:@"Power On"]) {
-        NSString *url = [NSString stringWithFormat:@"%@%@%@", serverIP, serverPort, postEngine];
-        
         NSString *fullURL = [NSString stringWithFormat:@"%@%@/?action=stream", serverIP, videoPort];
         NSURL *urlvideo = [NSURL URLWithString:fullURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:urlvideo];
         _webView.scalesPageToFit = YES;
         [_webView loadRequest:requestObj];
-        
-        [[API sharedInstance] setEngine:url completion:^(id response) {
+        NSDictionary *parameters = @{@"power":@"True"};
+        [[API sharedInstance] setPower:url params:parameters completion:^(id response) {
             
         } error:^(NSError *err) {
             NSLog(@"error: %@", err);
         }];
         [self.powerBtn setTitle: @"Power Off" forState: UIControlStateNormal];
     }else if ([self.powerBtn.titleLabel.text isEqualToString:@"Power Off"]){
-        NSString *url = [NSString stringWithFormat:@"%@%@%@", serverIP, serverPort, powerOff];
-        [[API sharedInstance] getVideo:url completion:^(id response) {
+        NSDictionary *parameters = @{@"power":@"False"};
+        [[API sharedInstance] setPower:url params:parameters completion:^(id response) {
             
         } error:^(NSError *err) {
             NSLog(@"error: %@", err);
