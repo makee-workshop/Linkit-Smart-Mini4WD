@@ -15,9 +15,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nOc-G9-tNm">
                                 <rect key="frame" x="135" y="536" width="104" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mini4WD Start"/>
+                                <state key="normal" title="Power On"/>
                                 <connections>
-                                    <action selector="turnOn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mvo-WF-aQx"/>
+                                    <action selector="powerBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HEI-M8-koa"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" id="Sjs-eA-vPj">
@@ -35,8 +35,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="button" destination="nOc-G9-tNm" id="TY9-Aj-L2v"/>
-                        <outlet property="turnOnButton" destination="nOc-G9-tNm" id="o7K-Lu-Ph7"/>
+                        <outlet property="powerBtn" destination="nOc-G9-tNm" id="6xF-er-Vpl"/>
                         <outlet property="webView" destination="Sjs-eA-vPj" id="UlO-Eh-dKy"/>
                     </connections>
                 </viewController>

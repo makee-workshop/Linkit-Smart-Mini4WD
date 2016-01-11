@@ -11,9 +11,8 @@
 @interface ViewController : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) IBOutlet UIButton *button;
-- (IBAction)turnOn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *turnOnButton;
+@property (weak, nonatomic) IBOutlet UIButton *powerBtn;
+- (IBAction)powerBtnAction:(id)sender;
 
 
 @end

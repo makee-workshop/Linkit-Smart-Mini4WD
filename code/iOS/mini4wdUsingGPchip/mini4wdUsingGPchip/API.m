@@ -46,7 +46,7 @@
     
 }
 
--(void)setEngine:(NSString *)url params:(NSDictionary *)p_Params completion:(void (^)(id response))completion error:(void (^)(NSError *error))error
+-(void)setEngine:(NSString *)url completion:(void (^)(id response))completion error:(void (^)(NSError *error))error
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -55,7 +55,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager POST:url
-      parameters:p_Params
+      parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
              completion(@"Success");
